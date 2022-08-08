@@ -9,6 +9,7 @@ function Book(title, author, pages, read) {
     this.read = read; 
 }
 
+//Add methods to prototype object 
 Book.prototype.info = function(read) {
     let print = 'not read yet';
     if (read) {
@@ -19,6 +20,10 @@ Book.prototype.info = function(read) {
 
 //create new book 
 const hungerGames = new Book('The Hunger Games', 'Suzanne Collins', 300, true);
+const harryPotter = new Book('Harry Potter', 'J.K. Rowling', 600, false);
+const pride = new Book('Pride and Prejudice', 'Jane Austen', 467, true);
+const killBird = new Book('To kill a Mockingbird', 'Harper Lee', 987, false);
+
 
 console.log(hungerGames.info());
 
