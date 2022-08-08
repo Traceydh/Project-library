@@ -1,10 +1,39 @@
+/*Header*/
 header {
     height: 15vh; 
     width: 100%;
     background: #F2D7D9;
-    box-shadow: 0px 5px 10px grey;
+    box-shadow: 0px 3px 10px grey;
+    position: relative;
+}
+
+.header-container {
+    padding-left: 2rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-book {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 2rem;
 }
 
 h1 {
     margin-top: 0px;
+}
+
+img {
+    width: 2rem;
+    background-color: #748DA6;
+    padding: 0.5rem;
+    border-radius: 5rem;
+}
+
+.main-container {
+    background-color: #D3CEDF;
+    height: 85vh;
 }
