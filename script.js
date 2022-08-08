@@ -9,25 +9,25 @@ function Book(title, author, pages, read) {
     this.read = read; 
 }
 
-//Add methods to prototype object 
+//Add info method to prototype object 
 Book.prototype.info = function() {
     this.read ? print = 'read' : print = 'not read yet'; 
     return `${this.title} by ${this.author}, ${this.pages} pages, ${print}`
 }
 
-//create new book 
-const hungerGames = new Book('The Hunger Games', 'Suzanne Collins', 300, true);
+//Book Samples
 const harryPotter = new Book('Harry Potter', 'J.K. Rowling', 600, false);
 const pride = new Book('Pride and Prejudice', 'Jane Austen', 467, true);
 const killBird = new Book('To kill a Mockingbird', 'Harper Lee', 987, false);
 
-
-console.log(pride.info());
-
-//ask user for input and add book to library 
+//Add a book to library 
 function addBookToLibrary() {
-
+    myLibrary.push(new Book('The Hunger Games', 'Suzanne Collins', 300, true));
 }
+
+console.log(myLibrary);
+addBookToLibrary()
+console.log(myLibrary);
 
 //function that loops through array and displays each book on page 
 
