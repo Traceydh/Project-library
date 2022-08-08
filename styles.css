@@ -4,3 +4,7 @@ header {
     background: #F2D7D9;
     box-shadow: 0px 5px 10px grey;
 }
+
+h1 {
+    margin-top: 0px;
+}
