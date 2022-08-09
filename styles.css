@@ -1,12 +1,17 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
 /*Variables*/
 :root {
-    --background: #F2D7D9;
-    --shadow: #818589;
-    --shelf: #748DA6;
-    --container: #D3CEDF;
+    --background: #FFEBC1;
+    --shadow: rgb(99, 76, 76);
+    --shelf: #8E3200;
+    --container: #D7A86E;
     --book: #F9F6EE;
 
 }
+
 /*Header*/
 header {
     height: 15vh; 
@@ -36,13 +41,13 @@ h1 {
 }
 
 .add {
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-    background-image: url(https://cdn-icons.flaticon.com/png/512/3524/premium/3524388.png?token=exp=1659958428~hmac=885096df604160d33f7d62392df33925);
-    background-size: cover;
     border-style: none;
     background-color: var(--background);
+}
+
+img {
+    height: 2rem;
+    width: 2rem;
 }
 
 button:hover {
@@ -118,7 +123,7 @@ input {
 
 .form-header, .close-button {
     font-size: 2rem;
-    font-weight: bolder;
+    font-weight: 700px;
 }
 
 .overlay {
