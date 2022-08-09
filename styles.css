@@ -35,7 +35,7 @@ h1 {
     margin-top: 0px;
 }
 
-button {
+.add {
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
@@ -80,6 +80,7 @@ button:hover {
     border-radius: 1rem;
 }
 
+/*Form style*/
 form {
     border: 1px solid red;
     height: 300px;
@@ -94,3 +95,18 @@ form {
 input {
     width: 200px;
 }
+
+.form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.close-button {
+    background-color: var(--book);
+    border-style: none;
+    font-weight: 800px;
+    font-size: 1.5rem;
+
+}
+
