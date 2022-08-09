@@ -41,3 +41,13 @@ const closeModalButton = document.querySelector('#close-modal');
 const overlay = document.querySelector('#overlay');
 
 //open modal function 
+function openModal(modal) {
+    openModalButton.classList.add("active");
+    overlay.classList.add("active");
+} 
+
+//close modal function 
+function closeModal(modal) {
+    openModalButton.classList.remove("active");
+    overlay.classList.remove("active");
+} 
