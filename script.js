@@ -39,15 +39,20 @@ console.log(myLibrary);
 const openModalButton = document.querySelector('#open-modal');
 const closeModalButton = document.querySelector('#close-modal');
 const overlay = document.querySelector('#overlay');
+const form = document.querySelector('.form-modal');
+
+//Connect button element with function
+openModalButton.addEventListener('click', openModal);
+closeModalButton.addEventListener('click', closeModal);
 
 //open modal function 
-function openModal(modal) {
-    openModalButton.classList.add("active");
+function openModal() {
+    form.classList.add("active");
     overlay.classList.add("active");
 } 
 
 //close modal function 
-function closeModal(modal) {
-    openModalButton.classList.remove("active");
+function closeModal() {
+    form.classList.remove("active");
     overlay.classList.remove("active");
 } 
