@@ -35,3 +35,9 @@ console.log(myLibrary);
 
 //add a button on each book's display to remove book from library 
 
+//Select buttons that open and close modal 
+const openModalButton = document.querySelector('#open-modal');
+const closeModalButton = document.querySelector('#close-modal');
+const overlay = document.querySelector('#overlay');
+
+//open modal function 
