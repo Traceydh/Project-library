@@ -46,7 +46,7 @@ button {
 }
 
 button:hover {
-
+    opacity: 60%;
 }
 
 /*Book shelf*/
