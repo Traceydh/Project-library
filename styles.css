@@ -47,7 +47,6 @@ h1 {
 
 button:hover {
     opacity: 60%;
-    background-color: red;
 }
 
 /*Book shelf*/
@@ -81,13 +80,12 @@ button:hover {
     border-radius: 1rem;
 }
 
-/*Form style*/
+/*Form Modal style*/
 .form-modal {
     border: 3px solid black;
     border-radius: 10%;
     height: 30rem;
     width: 30rem;
-    padding: 2rem;
 
     position: fixed;
     background-color: var(--book);
@@ -110,7 +108,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 1.5rem;
+    padding: 2rem;
 }
 
 .close-button {
@@ -138,4 +136,19 @@ input {
 .overlay.active {
     opacity: 1;
     pointer-events: all;
+}
+
+/*Form styling*/
+form {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    gap: 1.25rem;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

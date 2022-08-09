@@ -38,39 +38,38 @@
             </div>
         </div>
 
-        <section class="form-modal">
+        <section class="form-modal active">
             <div class="form-header">
                 <div>Add your book</div>
                 <button class="close-button" id="close-modal">&times;</button>
             </div>
-
-            <form>
-                <div>
-                    <label for="title">Title</label>
-                    <input type="text" id="title">
-                </div>
-                <div>
-                    <label for="author">Author</label>
-                    <input type="text" id="author">
-                </div>
-                <div>
-                    <label for="pages">Number of Pages</label>
-                    <input type="text" id="pages">
-                </div>
-                <div>
-                    <legend>Finished Reading? </legend>
+            <div class="form-container">
+                <form>
                     <div>
-                        <input type="checkbox" id="yes" name="yes">
+                        <label for="title">Title</label>
+                        <input type="text" id="title">
+                    </div>
+                    <div>
+                        <label for="author">Author</label>
+                        <input type="text" id="author">
+                    </div>
+                    <div>
+                        <label for="pages">Number of Pages</label>
+                        <input type="text" id="pages">
+                    </div>
+                    <div>Have you finished reading?</div>
+                    <div>
                         <label for="yes">Yes</label>
+                        <input type="radio" id="yes" name="read">
                     </div>
                     <div>
-                        <input type="checkbox" id="no" name="no">
                         <label for="no">No</label>
+                        <input type="radio" id="no" name="read">
                     </div>
-                </div>
-            </form>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </section>
-
         <div class="overlay" id="overlay"></div>
     </body>
 </html>

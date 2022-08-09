@@ -43,7 +43,7 @@ const form = document.querySelector('.form-modal');
 
 //Connect button element with function
 openModalButton.addEventListener('click', openModal);
-closeModalButton.addEventListener('click', closeModal);
+closeModalButton.addEventListener('click', closeModal); 
 
 //open modal function 
 function openModal() {
