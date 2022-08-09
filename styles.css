@@ -63,13 +63,14 @@ button:hover {
 .bookshelf {
     padding-top: 3rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     grid-template-rows: repeat(2, 1fr);
 }
 
 .shelf {
     grid-column: 1 / 4;
     justify-self: start;
+
     width: 90%;
     height: 1rem;
     margin: 0 auto;

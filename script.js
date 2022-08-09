@@ -2,32 +2,36 @@
 let myLibrary = []; 
 
 //book constructor function 
-function Book(title, author, pages, read) {
+function Book(title, author, pages) {
     this.title = title; 
     this.author = author; 
     this.pages = pages; 
-    this.read = read; 
+    //this.read = read; 
 }
 
 //Add info method to prototype object 
 Book.prototype.info = function() {
-    this.read ? print = 'read' : print = 'not read yet'; 
-    return `${this.title} by ${this.author}, ${this.pages} pages, ${print}`
+    //this.read ? print = 'read' : print = 'not read yet'; 
+    return `${this.title} by ${this.author}, ${this.pages} pages`
 }
 
-//Book Samples
-const harryPotter = new Book('Harry Potter', 'J.K. Rowling', 600, false);
-const pride = new Book('Pride and Prejudice', 'Jane Austen', 467, true);
-const killBird = new Book('To kill a Mockingbird', 'Harper Lee', 987, false);
+//Get forms input as variables in JS 
+const title = document.querySelector('#title');
+const author = document.querySelector('#author');
+const pages = document.querySelector('#pages');
+const yes = document.querySelector('#yes');
+const no = document.querySelector('#no');
 
 //Add a book to library 
 function addBookToLibrary() {
-    myLibrary.push(new Book('The Hunger Games', 'Suzanne Collins', 300, true));
+    myLibrary.push(new Book(title, author, pages));
+    console.log(myLibrary);
 }
 
-console.log(myLibrary);
-addBookToLibrary()
-console.log(myLibrary);
+//Add book to array after information has been submitted by user 
+const submit = document.querySelector('#submit');
+submit.addEventListener('click', addBookToLibrary);
+
 
 //function that loops through array and displays each book on page 
 
