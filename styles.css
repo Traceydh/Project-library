@@ -82,14 +82,17 @@ button:hover {
 
 /*Form style*/
 form {
-    border: 1px solid red;
-    height: 300px;
-    width: 300px;
+    border: 3px solid black;
+    border-radius: 10%;
+    height: 40%;
+    width: 40%;
+    padding: 2rem;
 
-    position: absolute;
+    position: fixed;
     background-color: var(--book);
-    top: 200px;
-    left: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 input {
