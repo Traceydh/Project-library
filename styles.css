@@ -152,3 +152,38 @@ form {
     justify-content: center;
     align-items: center;
 }
+
+input {
+    border-radius: 5px;
+    border-style: solid;
+}
+
+input[type=text] {
+    height: 1.5rem;
+    width: 100%;
+}
+
+input[type=radio] {
+    width: 2rem;
+    height: 0.8rem;
+}
+
+.radio-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+button[type='submit'] {
+    width: 5rem;
+    border-radius: 10px;
+    border-style: none;
+    background: var(--shelf);
+    padding: 0.7rem 1.2rem;
+    color: var(--book);
+}
