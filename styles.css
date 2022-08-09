@@ -1,9 +1,18 @@
+/*Variables*/
+:root {
+    --background: #F2D7D9;
+    --shadow: #818589;
+    --shelf: #748DA6;
+    --container: #D3CEDF;
+    --book: #F9F6EE;
+
+}
 /*Header*/
 header {
     height: 15vh; 
     width: 100%;
-    background: #F2D7D9;
-    box-shadow: 0px 3px 10px grey;
+    background: var(--background);
+    box-shadow: 0px 3px 10px var(--shadow);
     position: relative;
 }
 
@@ -26,16 +35,23 @@ h1 {
     margin-top: 0px;
 }
 
-img {
+button {
+    border-radius: 50%;
     width: 2rem;
-    background-color: #748DA6;
-    padding: 0.5rem;
-    border-radius: 5rem;
+    height: 2rem;
+    background-image: url(https://cdn-icons.flaticon.com/png/512/3524/premium/3524388.png?token=exp=1659958428~hmac=885096df604160d33f7d62392df33925);
+    background-size: cover;
+    border-style: none;
+    background-color: var(--background);
+}
+
+button:hover {
+
 }
 
 /*Book shelf*/
 .main-container {
-    background-color: #D3CEDF;
+    background-color: var(--container);
     height: 85vh;
 }
 
@@ -49,13 +65,13 @@ img {
     width: 90%;
     height: 1rem;
     margin: 0 auto;
-    background-color: #748DA6;
-    box-shadow: 0px 3px 5px grey;
+    background-color: var(--shelf);
+    box-shadow: 0px 3px 5px var(--shadow);
     margin-top: 9rem;
 }
 
 .book {
-    background-color: white;
+    background-color: var(--book);
     width: 8rem;
     height: 9rem;
     padding: 1rem;
@@ -68,10 +84,10 @@ form {
     border: 1px solid red;
     height: 300px;
     width: 300px;
-    
+
     position: absolute;
-    background-color: white;
-    top: 100px;
+    background-color: var(--book);
+    top: 200px;
     left: 200px;
 }
 
