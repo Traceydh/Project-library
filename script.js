@@ -21,8 +21,8 @@ Book.prototype.info = function() {
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const pages = document.querySelector('#pages');
-const yes = document.querySelector('#yes');
-const no = document.querySelector('#no');
+const resetForm = document.querySelector('form');
+
 
 //Get bookshelf element 
 const bookshelf = document.querySelector('#bookshelf');
@@ -33,7 +33,9 @@ submit.addEventListener('click', addBookToLibrary);
 
 //Add a book to library array and generate new 'book' element in DOM 
 function addBookToLibrary() {
-    myLibrary.push(new Book(title.value, author.value, pages.value));
+    //get radiobutton selection 
+    const read = document.querySelector('input[name="read"]:checked').value;
+    myLibrary.push(new Book(title.value, author.value, pages.value, read));
     const newBook = document.createElement('div'); 
     newBook.classList.add('book');
 
@@ -41,12 +43,17 @@ function addBookToLibrary() {
     const newTitle = document.createElement('div');
     newTitle.textContent = myLibrary[arrayIndex].title; 
     newTitle.classList.add('title');
+
     const newAuthor = document.createElement('div'); 
     newAuthor.textContent = `by ${myLibrary[arrayIndex].author}`; 
     newAuthor.classList.add('author');
+
     const newPages = document.createElement('div');
     newPages.textContent = `${myLibrary[arrayIndex].pages} pages`;  
     newPages.classList.add('pages');
+
+    const newRead = document.createElement('div');
+    read ? newRead.textContent = 'Finished reading' : newRead.textContent = 'Not finished reading';
 
     arrayIndex += 1;
 
@@ -54,15 +61,14 @@ function addBookToLibrary() {
     newBook.append(newTitle);
     newBook.append(newAuthor);
     newBook.append(newPages);
+    newBook.append(newRead);
+
     bookshelf.append(newBook);
 
     //remove modal 
     closeModal()
     //clear input 
-    title.value = '';
-    author.value = '';
-    pages.value = '';
-
+    resetForm.reset();
 }
 
 //function that loops through array and displays each book on page 
