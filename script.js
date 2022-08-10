@@ -58,6 +58,11 @@ function addBookToLibrary() {
 
     //remove modal 
     closeModal()
+    //clear input 
+    title.value = '';
+    author.value = '';
+    pages.value = '';
+
 }
 
 //function that loops through array and displays each book on page 
