@@ -32,7 +32,28 @@ submit.addEventListener('click', addBookToLibrary);
 //Add a book to library array and generate new 'book' element in DOM 
 function addBookToLibrary() {
     myLibrary.push(new Book(title, author, pages));
-    const newBook = document.createElement('div')
+    const newBook = document.createElement('div'); 
+    newBook.classList.add('book');
+
+    //Create elements for inside book 
+    const newTitle = document.createElement('div');
+    newTitle.textContent = title.value; 
+    newTitle.classList.add('title');
+    const newAuthor = document.createElement('div'); 
+    newAuthor.textContent = `by ${author.value}`; 
+    newAuthor.classList.add('author');
+    const newPages = document.createElement('div');
+    newPages.textContent = `${pages.value} pages`;  
+    newPages.classList.add('pages');
+
+    //append 
+    newBook.append(newTitle);
+    newBook.append(newAuthor);
+    newBook.append(newPages);
+    bookshelf.append(newBook);
+
+    //remove modal 
+    closeModal()
 }
 
 //function that loops through array and displays each book on page 
