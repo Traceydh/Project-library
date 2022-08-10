@@ -2,6 +2,8 @@
 let myLibrary = []; 
 let arrayIndex = 0; 
 
+//tick symbol 
+let tick = '\u2713';
 
 //book constructor function 
 function Book(title, author, pages) {
@@ -36,6 +38,7 @@ function addBookToLibrary() {
     //get radiobutton selection 
     const read = document.querySelector('input[name="read"]:checked').value;
     myLibrary.push(new Book(title.value, author.value, pages.value, read));
+    //add data to array 
     const newBook = document.createElement('div'); 
     newBook.classList.add('book');
 
@@ -53,7 +56,7 @@ function addBookToLibrary() {
     newPages.classList.add('pages');
 
     const newRead = document.createElement('div');
-    read ? newRead.textContent = 'Finished reading' : newRead.textContent = 'Not finished reading';
+    read ? newRead.textContent = `read ${tick}` : newRead.textContent = 'to be read';
 
     arrayIndex += 1;
 
