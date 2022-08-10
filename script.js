@@ -4,6 +4,8 @@ let arrayIndex = 0;
 
 //tick symbol 
 let tick = '\u2713';
+//color
+let bookColor = '#8E3200';
 
 //book constructor function 
 function Book(title, author, pages) {
@@ -25,7 +27,6 @@ const author = document.querySelector('#author');
 const pages = document.querySelector('#pages');
 const resetForm = document.querySelector('form');
 
-
 //Get bookshelf element 
 const bookshelf = document.querySelector('#bookshelf');
 
@@ -45,15 +46,12 @@ function addBookToLibrary() {
     //Create elements for inside book 
     const newTitle = document.createElement('div');
     newTitle.textContent = myLibrary[arrayIndex].title; 
-    newTitle.classList.add('title');
 
     const newAuthor = document.createElement('div'); 
     newAuthor.textContent = `by ${myLibrary[arrayIndex].author}`; 
-    newAuthor.classList.add('author');
 
     const newPages = document.createElement('div');
     newPages.textContent = `${myLibrary[arrayIndex].pages} pages`;  
-    newPages.classList.add('pages');
 
     const newRead = document.createElement('div');
     read ? newRead.textContent = `read ${tick}` : newRead.textContent = 'to be read';
@@ -68,17 +66,29 @@ function addBookToLibrary() {
 
     bookshelf.append(newBook);
 
+    // Change book background color 
+    let randomNum = Math.floor(Math.random()*4);
+    switch (randomNum) {
+        case 0: 
+            break;
+        case 1:
+            bookColor = '#228B22'
+            break;
+        case 2:
+            bookColor = '#808000';
+            break;
+        case 3: 
+            bookColor = '#000058';
+            break;
+    }
+    
+    newBook.style.backgroundColor = bookColor;
+
     //remove modal 
     closeModal()
     //clear input 
     resetForm.reset();
 }
-
-//function that loops through array and displays each book on page 
-
-//new book button that brings up a form that allows users to input details of new book 
-
-//add a button on each book's display to remove book from library 
 
 //Select buttons that open and close modal 
 const openModalButton = document.querySelector('#open-modal');
