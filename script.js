@@ -22,16 +22,18 @@ const pages = document.querySelector('#pages');
 const yes = document.querySelector('#yes');
 const no = document.querySelector('#no');
 
-//Add a book to library 
-function addBookToLibrary() {
-    myLibrary.push(new Book(title, author, pages));
-    console.log(myLibrary);
-}
+//Get bookshelf element 
+const bookshelf = document.querySelector('#bookshelf');
 
-//Add book to array after information has been submitted by user 
+//Connect function and submit button 
 const submit = document.querySelector('#submit');
 submit.addEventListener('click', addBookToLibrary);
 
+//Add a book to library array and generate new 'book' element in DOM 
+function addBookToLibrary() {
+    myLibrary.push(new Book(title, author, pages));
+    const newBook = document.createElement('div')
+}
 
 //function that loops through array and displays each book on page 
 
