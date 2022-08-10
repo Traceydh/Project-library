@@ -1,5 +1,7 @@
 // library array to store books 
 let myLibrary = []; 
+let arrayIndex = 0; 
+
 
 //book constructor function 
 function Book(title, author, pages) {
@@ -31,20 +33,22 @@ submit.addEventListener('click', addBookToLibrary);
 
 //Add a book to library array and generate new 'book' element in DOM 
 function addBookToLibrary() {
-    myLibrary.push(new Book(title, author, pages));
+    myLibrary.push(new Book(title.value, author.value, pages.value));
     const newBook = document.createElement('div'); 
     newBook.classList.add('book');
 
     //Create elements for inside book 
     const newTitle = document.createElement('div');
-    newTitle.textContent = title.value; 
+    newTitle.textContent = myLibrary[arrayIndex].title; 
     newTitle.classList.add('title');
     const newAuthor = document.createElement('div'); 
-    newAuthor.textContent = `by ${author.value}`; 
+    newAuthor.textContent = `by ${myLibrary[arrayIndex].author}`; 
     newAuthor.classList.add('author');
     const newPages = document.createElement('div');
-    newPages.textContent = `${pages.value} pages`;  
+    newPages.textContent = `${myLibrary[arrayIndex].pages} pages`;  
     newPages.classList.add('pages');
+
+    arrayIndex += 1;
 
     //append 
     newBook.append(newTitle);
