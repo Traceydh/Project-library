@@ -2,9 +2,6 @@
 let myLibrary = []; 
 let arrayIndex = 0; 
 
-//delete button 
-const deleteButton = document.createElement('button');
-
 //tick symbol 
 let tick = '\u2713';
 //color
@@ -41,71 +38,74 @@ submit.addEventListener('click', addBookToLibrary);
 function addBookToLibrary() {
     //get radiobutton selection 
     const read = document.querySelector('input[name="read"]:checked').value;
+    //add data to array
     myLibrary.push(new Book(title.value, author.value, pages.value, read));
-    //add data to array 
-    const newBook = document.createElement('div'); 
-    newBook.classList.add('book');
-
-    //delete button 
-    deleteButton.innerHTML = '&times;';
-    deleteButton.classList.add('delete');
-
-    //Create elements for inside book 
-    const newTitle = document.createElement('div');
-    newTitle.textContent = myLibrary[arrayIndex].title; 
-    newTitle.classList.add('title');
-
-    const newAuthor = document.createElement('div'); 
-    newAuthor.textContent = `by ${myLibrary[arrayIndex].author}`; 
-
-    const newPages = document.createElement('div');
-    newPages.textContent = `${myLibrary[arrayIndex].pages} pages`;  
-
-    const newRead = document.createElement('div');
-    read ? newRead.textContent = `read ${tick}` : newRead.textContent = 'to be read';
-
-    arrayIndex += 1;
-
-    //append 
-    newBook.append(deleteButton);
-    newBook.append(newTitle);
-    newBook.append(newAuthor);
-    newBook.append(newPages);
-    newBook.append(newRead);
-
-    bookshelf.append(newBook);
-
-    // Change book background color 
-    let randomNum = Math.floor(Math.random()*4);
-    switch (randomNum) {
-        case 0: 
-            break;
-        case 1:
-            bookColor = '#228B22'
-            break;
-        case 2:
-            bookColor = '#808000';
-            break;
-        case 3: 
-            bookColor = '#000058';
-            break;
-    }
-    
-    newBook.style.backgroundColor = bookColor;
-    //make button same color as background of book
-    deleteButton.style.backgroundColor = bookColor;
-
-    //remove modal 
-    closeModal()
-    //clear input 
-    resetForm.reset();
+    generateBookCard(read);
 }
 
-//remove card when x button is clicked 
-deleteButton.addEventListener('click', remove);
-
-function remove() {
-    console.log('remove');
+function generateBookCard(read) {
+    for (let i = 0; i < myLibrary.length; i++) {
+        if (document.querySelector(`#id-${i}`) == null) {
+            const newBook = document.createElement('div'); 
+            newBook.classList.add('book');
+            newBook.setAttribute("id", `id-${i}`);
+        
+            //delete button 
+            const deleteButton = document.createElement('button');
+            deleteButton.innerHTML = '&times;';
+            deleteButton.classList.add('delete');
+        
+            //Create elements for inside book 
+            const newTitle = document.createElement('div');
+            newTitle.textContent = myLibrary[arrayIndex].title; 
+            newTitle.classList.add('title');
+        
+            const newAuthor = document.createElement('div'); 
+            newAuthor.textContent = `by ${myLibrary[arrayIndex].author}`; 
+        
+            const newPages = document.createElement('div');
+            newPages.textContent = `${myLibrary[arrayIndex].pages} pages`;  
+        
+            const newRead = document.createElement('div');
+            read ? newRead.textContent = `read ${tick}` : newRead.textContent = 'to be read';
+        
+            arrayIndex += 1;
+        
+            //append 
+            newBook.append(deleteButton);
+            newBook.append(newTitle);
+            newBook.append(newAuthor);
+            newBook.append(newPages);
+            newBook.append(newRead);
+        
+            bookshelf.append(newBook);
+        
+            // Change book background color 
+            let randomNum = Math.floor(Math.random()*4);
+            switch (randomNum) {
+                case 0: 
+                    break;
+                case 1:
+                    bookColor = '#228B22'
+                    break;
+                case 2:
+                    bookColor = '#808000';
+                    break;
+                case 3: 
+                    bookColor = '#000058';
+                    break;
+            }
+            
+            newBook.style.backgroundColor = bookColor;
+            //make button same color as background of book
+            deleteButton.style.backgroundColor = bookColor;
+        
+            //remove modal 
+            closeModal()
+            //clear input 
+            resetForm.reset();
+        }
+    }
 }
 
 //Select buttons that open and close modal 
