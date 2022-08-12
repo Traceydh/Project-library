@@ -80,32 +80,36 @@ function generateBookCard(read) {
         
             bookshelf.append(newBook);
         
-            // Change book background color 
-            let randomNum = Math.floor(Math.random()*4);
-            switch (randomNum) {
-                case 0: 
-                    break;
-                case 1:
-                    bookColor = '#228B22'
-                    break;
-                case 2:
-                    bookColor = '#808000';
-                    break;
-                case 3: 
-                    bookColor = '#000058';
-                    break;
-            }
-            
+            randomColor();
             newBook.style.backgroundColor = bookColor;
             //make button same color as background of book
             deleteButton.style.backgroundColor = bookColor;
-        
             //remove modal 
             closeModal()
             //clear input 
             resetForm.reset();
         }
     }
+}
+
+//random background color generator
+function randomColor() {
+    // Change book background color 
+    let randomNum = Math.floor(Math.random()*4);
+    switch (randomNum) {
+        case 0: 
+            break;
+        case 1:
+            bookColor = '#228B22'
+            break;
+        case 2:
+            bookColor = '#808000';
+            break;
+        case 3: 
+            bookColor = '#000058';
+            break;
+    }
+
 }
 
 //Select buttons that open and close modal 
