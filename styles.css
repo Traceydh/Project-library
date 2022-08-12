@@ -93,6 +93,21 @@ button:hover {
     box-shadow: 5px 5px 5px var(--shadow);
 }
 
+.delete {
+    border-style: none;
+    border-radius: 90%;
+    color:rgb(224, 198, 131);
+    max-width: 1rem;
+    position: relative;
+    top: -2rem;
+    right: -8rem;
+    font-size: 1.25rem;
+}
+
+.title {
+    margin-top: -2rem;
+}
+
 .book-container {
     display: flex;
     width: 100%;

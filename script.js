@@ -2,6 +2,9 @@
 let myLibrary = []; 
 let arrayIndex = 0; 
 
+//delete button 
+const deleteButton = document.createElement('button');
+
 //tick symbol 
 let tick = '\u2713';
 //color
@@ -43,9 +46,14 @@ function addBookToLibrary() {
     const newBook = document.createElement('div'); 
     newBook.classList.add('book');
 
+    //delete button 
+    deleteButton.innerHTML = '&times;';
+    deleteButton.classList.add('delete');
+
     //Create elements for inside book 
     const newTitle = document.createElement('div');
     newTitle.textContent = myLibrary[arrayIndex].title; 
+    newTitle.classList.add('title');
 
     const newAuthor = document.createElement('div'); 
     newAuthor.textContent = `by ${myLibrary[arrayIndex].author}`; 
@@ -59,6 +67,7 @@ function addBookToLibrary() {
     arrayIndex += 1;
 
     //append 
+    newBook.append(deleteButton);
     newBook.append(newTitle);
     newBook.append(newAuthor);
     newBook.append(newPages);
@@ -83,11 +92,20 @@ function addBookToLibrary() {
     }
     
     newBook.style.backgroundColor = bookColor;
+    //make button same color as background of book
+    deleteButton.style.backgroundColor = bookColor;
 
     //remove modal 
     closeModal()
     //clear input 
     resetForm.reset();
+}
+
+//remove card when x button is clicked 
+deleteButton.addEventListener('click', remove);
+
+function remove() {
+    console.log('remove');
 }
 
 //Select buttons that open and close modal 
