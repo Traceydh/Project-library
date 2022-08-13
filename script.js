@@ -29,25 +29,24 @@ submitFormButton.addEventListener('click', addBookToLibrary);
 //function that can take user's input and store the new book objects into an array 
 function addBookToLibrary() {
     myLibrary.push(new Book(title.value, author.value, pages.value));
-    for (let i = 0; i < myLibrary.length; i++) {
-        console.log(document.querySelector('[data-number="i"]'));
-        if (document.querySelector('[data-number="i"]') == null) {
-        createBookCard(myLibrary[i], i);
-    }
-    }
     console.log(myLibrary);
+    render();
 }
 
+//Create visual book card in browser 
+function render() {
+ const display = document.querySelector('#bookshelf');
+ const books = document.querySelectorAll('.book');
 
+ books.forEach(book => display.removeChild(book));
 
-//check if card element exists 
-function exists (arrayItem) {
+ for (let i=0; i < myLibrary.length; i++) {
+    createBookCard(myLibrary[i],i);
+ }
 
 }
-
 
 function createBookCard(book, i) {
-
     const bookShelf = document.querySelector('#bookshelf');
     const bookCard = document.createElement('div');
     const removeCard = document.createElement('button'); 
@@ -57,7 +56,6 @@ function createBookCard(book, i) {
     
     bookCard.classList.add('book');
     bookCard.dataset.number = `${i}`;
-    bookCard.setAttribute('id', `num-${i}`);
     removeCard.classList.add('delete');
     title.classList.add('title');
 
