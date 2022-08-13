@@ -29,7 +29,6 @@ submitFormButton.addEventListener('click', addBookToLibrary);
 //function that can take user's input and store the new book objects into an array 
 function addBookToLibrary() {
     myLibrary.push(new Book(title.value, author.value, pages.value));
-    console.log(myLibrary);
     render();
 }
 
@@ -41,9 +40,8 @@ function render() {
  books.forEach(book => display.removeChild(book));
 
  for (let i=0; i < myLibrary.length; i++) {
-    createBookCard(myLibrary[i],i);
+    createBookCard(myLibrary[i], i);
  }
-
 }
 
 function createBookCard(book, i) {
@@ -53,20 +51,25 @@ function createBookCard(book, i) {
     const title = document.createElement('div'); 
     const author = document.createElement('div'); 
     const pages = document.createElement('div'); 
+    const readButton = document.createElement('button');
     
     bookCard.classList.add('book');
     bookCard.dataset.number = `${i}`;
     removeCard.classList.add('delete');
     title.classList.add('title');
+    readButton.classList.add('read');
 
+    removeCard.innerHTML = '&times;';
     title.textContent = `${book.title}`;
     author.textContent = `By ${book.author}`;
     pages.textContent = `${book.pages} pages`;
+    readButton.textContent = "read";
 
     bookCard.append(removeCard);
     bookCard.append(title);
     bookCard.append(author);
     bookCard.append(pages);
+    bookCard.append(readButton);
     bookShelf.append(bookCard);
 
     console.log(bookCard);
