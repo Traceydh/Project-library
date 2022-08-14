@@ -9,10 +9,7 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-//Method:remove book from main container 
-Book.prototype.remove = function () {
-    console.log('remove' + this.title);
-}
+//Method
 
 //Select buttons elements on page 
 const submitFormButton = document.querySelector('#submit');
@@ -78,7 +75,6 @@ function createBookCard(book, i) {
     bookCard.append(readButton);
     bookShelf.append(bookCard);
 
-    
     readButton.addEventListener('click', e => {
         if (e.target.textContent == "Read") {
             readButton.textContent = "Not Read";
@@ -87,11 +83,12 @@ function createBookCard(book, i) {
         }
         console.log(e.target);
     })
+
+    removeCard.addEventListener('click', e => {
+        e.target.parentElement.remove();
+    })
 }
 
-
-////////////////////////test//////////////////////
-let test = new Book('Title', "someone", 50, true);
 ////////////////////////Modal//////////////////////
 
 //Select buttons that open and close modal 
