@@ -2,10 +2,11 @@
 let myLibrary = []; 
 
 //constructor function that makes new book objects 
-function Book(title, author, pages) {
+function Book(title, author, pages, read) {
     this.title = title; 
     this.author = author; 
     this.pages = pages; 
+    this.read = read;
 }
 
 //Method:remove book from main container 
@@ -28,7 +29,8 @@ submitFormButton.addEventListener('click', addBookToLibrary);
 
 //function that can take user's input and store the new book objects into an array 
 function addBookToLibrary() {
-    myLibrary.push(new Book(title.value, author.value, pages.value));
+    const read = document.querySelector('input[name="read"]:checked'); 
+    myLibrary.push(new Book(title.value, author.value, pages.value, read.value));
     render();
 }
 
@@ -37,7 +39,7 @@ function render() {
  const display = document.querySelector('#bookshelf');
  const books = document.querySelectorAll('.book');
 
- books.forEach(book => display.removeChild(book));
+books.forEach(book => display.removeChild(book));
 
  for (let i=0; i < myLibrary.length; i++) {
     createBookCard(myLibrary[i], i);
@@ -63,7 +65,11 @@ function createBookCard(book, i) {
     title.textContent = `${book.title}`;
     author.textContent = `By ${book.author}`;
     pages.textContent = `${book.pages} pages`;
-    readButton.textContent = "read";
+    if (book.read) {
+        readButton.textContent = "Read";
+    } else {
+        readButton.textContent = "Not Read";
+    }
 
     bookCard.append(removeCard);
     bookCard.append(title);
@@ -76,17 +82,9 @@ function createBookCard(book, i) {
 
 }
 
-//function that loops through array and displays each book on page 
-//myLibrary.forEach(); 
-
-//Elements of book object that will be injected into the DOM 
-
-//when Add book button is pressed 
-//Add book object into myLibrary array 
-//Create book object
 
 ////////////////////////test//////////////////////
-let test = new Book('Title', "someone", 50);
+let test = new Book('Title', "someone", 50, true);
 ////////////////////////Modal//////////////////////
 
 //Select buttons that open and close modal 
