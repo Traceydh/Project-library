@@ -78,8 +78,15 @@ function createBookCard(book, i) {
     bookCard.append(readButton);
     bookShelf.append(bookCard);
 
-    console.log(bookCard);
-
+    
+    readButton.addEventListener('click', e => {
+        if (e.target.textContent == "Read") {
+            readButton.textContent = "Not Read";
+        } else {
+            readButton.textContent = "Read";
+        }
+        console.log(e.target);
+    })
 }
 
 
