@@ -85,12 +85,13 @@ function createBookCard(book, i) {
     })
 
     removeCard.addEventListener('click', e => {
-        e.target.parentElement.remove();
+        let bookCard = e.target.parentElement;
+        bookCard.remove();
+        myLibrary.splice(bookCard.dataset.number, 1);
     })
 
     form.reset();
     closeModal()
-
 }
 
 ////////////////////////Modal//////////////////////
