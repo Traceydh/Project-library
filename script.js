@@ -51,6 +51,7 @@ function createBookCard(book, i) {
     const author = document.createElement('div'); 
     const pages = document.createElement('div'); 
     const readButton = document.createElement('button');
+    const form = document.querySelector('form');
     
     bookCard.classList.add('book');
     bookCard.dataset.number = `${i}`;
@@ -81,12 +82,15 @@ function createBookCard(book, i) {
         } else {
             readButton.textContent = "Read";
         }
-        console.log(e.target);
     })
 
     removeCard.addEventListener('click', e => {
         e.target.parentElement.remove();
     })
+
+    form.reset();
+    closeModal()
+
 }
 
 ////////////////////////Modal//////////////////////
