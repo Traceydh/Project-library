@@ -12,4 +12,4 @@ This was a good project to practice
 - object and prototype javascript concepts 
 - intermediate CSS skills 
 
-Check out the live demo (here) [https://traceydh.github.io/Project-library/]
+Check out the live demo [here](https://traceydh.github.io/Project-library/)
